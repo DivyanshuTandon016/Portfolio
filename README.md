@@ -1,41 +1,47 @@
 # Divyanshu Tandon Portfolio
 
-Professional portfolio website for internships, research roles, school review, LinkedIn, and public viewing.
+Published personal portfolio for Divyanshu Tandon.
 
-## Files
+Live site: [https://dtandon.com/](https://dtandon.com/)
+
+## Overview
+
+This is a static portfolio website for internships, research roles, professional networking, and public viewing. It highlights research work, software projects, publications, skills, contact links, and a downloadable resume.
+
+## Project Structure
 
 - `index.html` - page content, SEO metadata, contact links, and portfolio sections
-- `styles.css` - responsive visual design and layout
+- `styles.css` - responsive visual design, layout, and component styling
 - `script.js` - mobile navigation and active section highlighting
 - `assets/` - resume PDF and portfolio images
+- `CNAME` - custom domain configuration for `dtandon.com`
 
-## View Locally
+## Local Preview
 
-Open `index.html` in a browser. No build step is required.
+Open `index.html` in a browser. No build step or package install is required.
 
-## Deploy
+## Deployment
 
-This site can be deployed as-is because it is a static website.
+The site is published with GitHub Pages from this repository:
 
-### GitHub Pages
+[https://github.com/DivyanshuTandon016/Portfolio](https://github.com/DivyanshuTandon016/Portfolio)
 
-1. Create a public GitHub repository, for example `portfolio`.
-2. Upload `index.html`, `styles.css`, `script.js`, `README.md`, and the full `assets/` folder.
-3. Open the repository on GitHub and go to `Settings` -> `Pages`.
-4. Under `Build and deployment`, choose `Deploy from a branch`.
-5. Select the `main` branch and `/root`, then save.
-6. GitHub will publish the site at a link like:
+The custom domain is configured through `CNAME`:
 
-   `https://DivyanshuTandon016.github.io/portfolio/`
+```text
+dtandon.com
+```
 
-If the repository is named `DivyanshuTandon016.github.io`, the site can publish at:
+## Updating The Site
 
-`https://DivyanshuTandon016.github.io/`
+1. Edit the relevant file locally.
+2. Preview `index.html` in a browser.
+3. Commit and push changes to GitHub.
+4. GitHub Pages will publish the update automatically.
 
-### Netlify
+Common updates:
 
-Drag the whole portfolio folder into Netlify Drop:
-
-`https://app.netlify.com/drop`
-
-Netlify will generate a public link immediately, and you can rename it in site settings.
+- Update page text and links in `index.html`
+- Adjust layout or colors in `styles.css`
+- Replace images or the resume PDF in `assets/`
+- Keep canonical, Open Graph, and structured-data URLs pointed to `https://dtandon.com/`
