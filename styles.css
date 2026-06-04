@@ -351,7 +351,7 @@ h3 {
 }
 
 .publication-copy h2 {
-  text-align: center;
+  text-align: left;
 }
 
 .focus-grid p,
@@ -481,12 +481,52 @@ h3 {
   gap: 16px;
 }
 
+.poster-link {
+  display: block;
+  cursor: zoom-in;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.poster-link img {
+  transition: opacity 0.18s;
+}
+
+.poster-link:hover img {
+  opacity: 0.82;
+}
+
 .poster-stack img {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
   box-shadow: var(--shadow);
+}
+
+.pub-meta {
+  margin-bottom: 10px;
+  color: var(--red);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pub-title {
+  margin-bottom: 14px;
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.pub-citation {
+  margin-top: 14px;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .gallery-section {
@@ -572,9 +612,6 @@ h3 {
   min-height: 48px;
 }
 
-.contact-panel a:last-child {
-  grid-column: 1 / -1;
-}
 
 .site-footer {
   display: flex;
@@ -704,9 +741,6 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .contact-panel a:last-child {
-    grid-column: auto;
-  }
 
   .quick-stats div {
     min-height: auto;
