@@ -471,6 +471,7 @@ main,
 .hero-media {
   position: relative;
   width: 100%;
+  perspective: 1200px;
 }
 
 .portrait-frame {
@@ -482,6 +483,8 @@ main,
   border-radius: var(--radius);
   background: linear-gradient(160deg, #241825, #120f18);
   box-shadow: var(--shadow);
+  transition: transform 0.25s var(--ease);
+  will-change: transform;
 }
 
 .portrait-frame::after {
