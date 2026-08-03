@@ -27,6 +27,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--bg);
+  overflow-x: hidden;
 }
 
 body {
@@ -759,6 +760,7 @@ main,
 
 .projects {
   position: relative;
+  overflow: hidden;
   padding-top: 62px;
 }
 
