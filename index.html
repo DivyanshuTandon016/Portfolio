@@ -130,40 +130,58 @@
     </header>
 
     <main id="top">
-      <section class="hero section-pad reveal">
-        <div class="hero-copy">
-          <div class="asu-badge">
-            <span class="asu-badge-mark">ASU</span>
-            <span>Arizona State University &middot; Computer Science Student</span>
-          </div>
-          <h1>Building software that creates <span class="text-gradient">real impact.</span></h1>
-          <div class="hero-lede">
-            <p>
-              I'm Divyanshu Tandon, a Computer Science student at Arizona State University building research
-              software for X-ray free-electron laser experiments, security tooling for AI agents, and full-stack
-              systems that hold up under real use. My code lives close to the problem: detector frames, h5 files,
-              agent traces, and the strange failure modes that only show up when hardware and software meet.
-            </p>
-          </div>
-          <div class="hero-actions" aria-label="Primary links">
-            <a class="button button-primary" href="#projects">View My Work</a>
-            <a class="button button-ghost" href="#about">About Me</a>
+      <section class="hero reveal">
+        <div class="hero-bg">
+          <img src="assets/hero-lab.jpg" alt="Divyanshu Tandon in the CXFEL lab at ASU Biodesign, standing beside beamline instrumentation" />
+        </div>
+        <div class="hero-scrim"></div>
+        <div class="hero-inner section-pad">
+          <div class="hero-copy">
+            <p class="hero-kicker">Arizona State University</p>
+            <h1>Building software that creates <span class="text-gradient">real impact.</span></h1>
+            <div class="hero-lede">
+              <p>
+                I'm Divyanshu Tandon, a Computer Science student at Arizona State University building research
+                software for X-ray free-electron laser experiments, security tooling for AI agents, and
+                full-stack systems that hold up under real use.
+              </p>
+            </div>
+            <div class="hero-actions" aria-label="Primary links">
+              <a class="button button-primary" href="#projects">
+                View My Work
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </a>
+              <a class="button button-ghost" href="#about">About Me</a>
+            </div>
+            <div class="hero-tech">
+              <p class="hero-tech-label">I Work With</p>
+              <div class="tech-chips">
+                <span class="tech-chip" aria-label="Code">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6 4 10l5 4" /><path d="M15 6l5 4-5 4" /></svg>
+                </span>
+                <span class="tech-chip" aria-label="TypeScript">TS</span>
+                <span class="tech-chip" aria-label="Python">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4 0-4 2.5-4 2.5v3h4" /><path d="M12 21c4 0 4-2.5 4-2.5v-3h-4" /><path d="M8 8.5H5.5A2.5 2.5 0 0 0 3 11v2a2.5 2.5 0 0 0 2.5 2.5H8" /><path d="M16 15.5h2.5A2.5 2.5 0 0 0 21 13v-2a2.5 2.5 0 0 0-2.5-2.5H16" /></svg>
+                </span>
+                <span class="tech-chip" aria-label="React">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none" /><ellipse cx="12" cy="12" rx="9" ry="3.6" /><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)" /><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)" /></svg>
+                </span>
+                <span class="tech-chip" aria-label="Docker">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="10" width="4" height="4" /><rect x="8" y="10" width="4" height="4" /><rect x="13" y="10" width="4" height="4" /><rect x="8" y="5" width="4" height="4" /><path d="M2 14c0 3.5 2.5 5.5 6 5.5h6c3 0 5.5-1.8 6.5-5.5" /></svg>
+                </span>
+                <span class="tech-chip" aria-label="Database">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3" /><path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6" /><path d="M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3" /></svg>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="hero-media">
-          <div class="portrait-frame">
-            <img src="assets/hero-lab.jpg" alt="Divyanshu Tandon in the CXFEL lab at ASU Biodesign, standing beside beamline instrumentation" />
-          </div>
-          <aside class="what-i-do" aria-label="What I do">
-            <h4>What I Do</h4>
-            <ul>
-              <li>Build research software for X-ray free-electron laser experiments</li>
-              <li>Ship secure systems, including a security gateway for AI agents</li>
-              <li>Turn messy experimental data into tools people actually use</li>
-              <li>Keep learning: security, AI agents, and distributed systems</li>
-            </ul>
-          </aside>
-        </div>
+        <aside class="hero-note">
+          <span class="hero-note-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+          </span>
+          <p>Open to internships, research roles, and software engineering opportunities.</p>
+        </aside>
       </section>
 
       <section class="stat-bar section-pad reveal" aria-label="Career highlights">
@@ -179,7 +197,7 @@
             <div class="stat-sub">Across research, security, and web systems</div>
           </div>
           <div>
-            <div class="stat-num">&infin;</div>
+            <div class="stat-num stat-num-symbol">&infin;</div>
             <div class="stat-label">Always Learning</div>
             <div class="stat-sub">New frameworks, systems, and security tools</div>
           </div>
@@ -188,25 +206,6 @@
             <div class="stat-label">Expected Graduation</div>
             <div class="stat-sub">B.S. Computer Science, ASU</div>
           </div>
-        </div>
-        <div class="availability">
-          <span></span>
-          Open to internships, research roles, and software engineering opportunities.
-        </div>
-      </section>
-
-      <section class="tech-strip section-pad reveal">
-        <p class="tech-strip-label">Tools &amp; Technologies I Work With</p>
-        <div class="tech-pills">
-          <span>Python</span>
-          <span>TypeScript</span>
-          <span>React</span>
-          <span>FastAPI</span>
-          <span>PyQt / PySide</span>
-          <span>Docker</span>
-          <span>Redis</span>
-          <span>Airflow</span>
-          <span>Git</span>
         </div>
       </section>
 
