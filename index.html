@@ -17,16 +17,16 @@
     <meta property="og:title" content="Divyanshu Tandon | Portfolio" />
     <meta
       property="og:description"
-      content="Computer Science researcher and software engineer focused on scientific computing, XFEL imaging, and full-stack systems."
+      content="Computer Science researcher and software engineer focused on scientific computing, AI agent security, and full-stack systems."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dtandon.com/" />
-    <meta property="og:image" content="https://dtandon.com/assets/profile.png" />
-    <meta name="theme-color" content="#0c1b2a" />
+    <meta property="og:image" content="https://dtandon.com/assets/hero-lab.jpg" />
+    <meta name="theme-color" content="#0a090f" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -36,7 +36,7 @@
         "@type": "Person",
         "name": "Divyanshu Tandon",
         "email": "mailto:dtandon3@asu.edu",
-        "image": "assets/profile.png",
+        "image": "assets/hero-lab.jpg",
         "affiliation": [
           {
             "@type": "CollegeOrUniversity",
@@ -52,13 +52,14 @@
           }
         ],
         "sameAs": [
-          "https://github.com/DivyanshuTandon016",
+          "https://github.com/divtandon",
           "https://gitlab.com/DivyanshuTandon016",
-          "https://www.linkedin.com/in/divyanshutandon016/"
+          "https://www.linkedin.com/in/divtandon/"
         ],
         "knowsAbout": [
           "Computer Science",
           "Scientific Computing",
+          "AI Agent Security",
           "XFEL data analysis",
           "Python",
           "React",
@@ -71,8 +72,8 @@
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Divyanshu Tandon home">
-        <span class="brand-mark">DT</span>
-        <span>Divyanshu Tandon</span>
+        <span>dtandon.com</span>
+        <span class="brand-dot" aria-hidden="true"></span>
       </a>
       <button
         class="nav-toggle"
@@ -86,108 +87,181 @@
         <span></span>
       </button>
       <nav class="site-nav" id="site-nav" data-nav>
-        <a href="#work">Work</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#publication">Publication</a>
+        <a href="#writings">Writings</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="header-actions">
+        <a
+          class="icon-link"
+          href="https://github.com/divtandon"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.16c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
+            />
+          </svg>
+        </a>
+        <a
+          class="icon-link"
+          href="https://www.linkedin.com/in/divtandon/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45Z"
+            />
+          </svg>
+        </a>
+        <a class="button button-primary" href="assets/DivyanshuTandon_Resume.pdf" target="_blank" rel="noreferrer">
+          Resume
+        </a>
+      </div>
     </header>
 
     <main id="top">
-      <section class="hero section-pad">
+      <section class="hero section-pad reveal">
         <div class="hero-copy">
-          <h1>Divyanshu Tandon</h1>
+          <div class="asu-badge">
+            <span class="asu-badge-mark">ASU</span>
+            <span>Arizona State University &middot; Computer Science Student</span>
+          </div>
+          <h1>Building software that creates <span class="text-gradient">real impact.</span></h1>
           <div class="hero-lede">
             <p>
-              Most software engineers never have to think about whether a stream of liquid, thinner than a human
-              hair, is stable enough to survive an X-ray beam. I do. I am Divyanshu Tandon, a Computer Science
-              student at Arizona State University and an undergraduate researcher with CXFEL and ASU Biodesign, where
-              my code lives close to the experiment: detector frames, h5 files, microjet videos, calibration details,
-              and the strange failure modes that only show up when hardware and software meet.
-            </p>
-            <p>
-              My work centers on scientific software for X-ray free-electron laser imaging and biomolecular
-              experiments. I build Python tools with NumPy, h5py, PyQt/PySide, and visualization workflows that help
-              researchers inspect detector data, process high-speed imagery, and quantify microjet behavior,
-              including velocity, diameter, breakup, and stability. At SLAC's LCLS beamline, I saw how small software
-              decisions affect real data collection, not just a demo dataset.
-            </p>
-            <p>
-              Outside the lab, I build product-style software too: React interfaces, FastAPI services, backend APIs,
-              and full-stack applications. I like problems where the interface has to stay usable, the computation has
-              to be correct, and the system has to earn trust from people doing difficult work.
+              I'm Divyanshu Tandon &mdash; a Computer Science student at Arizona State University building research
+              software for X-ray free-electron laser experiments, security tooling for AI agents, and full-stack
+              systems that hold up under real use. My code lives close to the problem: detector frames, h5 files,
+              agent traces, and the strange failure modes that only show up when hardware and software meet.
             </p>
           </div>
           <div class="hero-actions" aria-label="Primary links">
-            <a class="button button-primary" href="assets/DivyanshuTandon_Resume.pdf" target="_blank" rel="noreferrer">
-              Resume
-            </a>
-            <a class="button" href="mailto:dtandon3@asu.edu">Email</a>
-            <a class="text-link" href="https://www.linkedin.com/in/divyanshutandon016/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
+            <a class="button button-primary" href="#projects">View My Work</a>
+            <a class="button button-ghost" href="#about">About Me</a>
           </div>
-          <dl class="quick-stats" aria-label="Career highlights">
-            <div>
-              <dt>2027</dt>
-              <dd>BS Computer Science, ASU</dd>
-            </div>
-            <div>
-              <dt>LCLS</dt>
-              <dd>SLAC beamline and sample-delivery research</dd>
-            </div>
-            <div>
-              <dt>2025</dt>
-              <dd>Lab on a Chip publication</dd>
-            </div>
-          </dl>
         </div>
-        <div class="hero-media" aria-label="Portrait of Divyanshu Tandon">
+        <div class="hero-media">
           <div class="portrait-frame">
-            <img src="assets/profile.png" alt="Divyanshu Tandon standing in a blue shirt" />
+            <img src="assets/hero-lab.jpg" alt="Divyanshu Tandon in the CXFEL lab at ASU Biodesign, standing beside beamline instrumentation" />
           </div>
-          <div class="availability">
-            <span></span>
-            Open to internships, research roles, and software engineering opportunities.
-          </div>
+          <aside class="what-i-do" aria-label="What I do">
+            <h4>What I Do</h4>
+            <ul>
+              <li>Build research software for X-ray free-electron laser experiments</li>
+              <li>Ship secure systems, including a security gateway for AI agents</li>
+              <li>Turn messy experimental data into tools people actually use</li>
+              <li>Keep learning: security, AI agents, and distributed systems</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
-      <section class="section-pad intro-band" id="work">
-        <div class="section-heading">
-          <h2>Research Software</h2>
+      <section class="stat-bar section-pad reveal" aria-label="Career highlights">
+        <div class="stat-grid">
+          <div>
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Projects Shipped</div>
+            <div class="stat-sub">Research tools to production-ready apps</div>
+          </div>
+          <div>
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Years Coding</div>
+            <div class="stat-sub">Across research, security, and web systems</div>
+          </div>
+          <div>
+            <div class="stat-num">&infin;</div>
+            <div class="stat-label">Always Learning</div>
+            <div class="stat-sub">New frameworks, systems, and security tools</div>
+          </div>
+          <div>
+            <div class="stat-num">2027</div>
+            <div class="stat-label">Expected Graduation</div>
+            <div class="stat-sub">B.S. Computer Science, ASU</div>
+          </div>
         </div>
-        <div class="intro-grid">
-          <p>
-            In XFEL sample-delivery work, I write software that measures liquid microjet velocity, diameter, angle,
-            and breakup behavior from high-speed imaging data. My day-to-day stack includes NumPy, pandas, h5py,
-            PyQt/PySide, and image-processing workflows tied to real experimental constraints.
-          </p>
-          <p>
-            I have supported beamline and lab work across ASU Biodesign, CXFEL, and LCLS at SLAC, from detector
-            visualization and data collection support to documentation that helps a research team understand what
-            the code is doing and why it matters.
-          </p>
+        <div class="availability">
+          <span></span>
+          Open to internships, research roles, and software engineering opportunities.
         </div>
       </section>
 
-      <section class="section-pad focus-section">
-        <div class="section-heading">
-          <h2>Core Areas</h2>
+      <section class="tech-strip section-pad reveal">
+        <p class="tech-strip-label">Tools &amp; Technologies I Work With</p>
+        <div class="tech-pills">
+          <span>Python</span>
+          <span>TypeScript</span>
+          <span>React</span>
+          <span>FastAPI</span>
+          <span>PyQt / PySide</span>
+          <span>Docker</span>
+          <span>Redis</span>
+          <span>Airflow</span>
+          <span>Git</span>
         </div>
-        <div class="focus-grid">
-          <article>
-            <h3>Scientific Computing</h3>
-            <p>Python pipelines for imaging data, experiment metadata, and X-ray analysis workflows.</p>
+      </section>
+
+      <section class="section-pad about" id="about">
+        <div class="about-copy reveal">
+          <p class="eyebrow">About Me</p>
+          <h2>Research software, security tooling, and full-stack systems.</h2>
+          <p>
+            Most software engineers never have to think about whether a stream of liquid, thinner than a human
+            hair, is stable enough to survive an X-ray beam. I do. As an undergraduate researcher with CXFEL and
+            ASU Biodesign, and a summer researcher at SLAC's LCLS beamline, I build Python tools with NumPy, h5py,
+            and PyQt/PySide that help researchers inspect detector data, process high-speed imagery, and quantify
+            microjet behavior &mdash; velocity, diameter, breakup, and stability.
+          </p>
+          <p>
+            Outside the lab, I build for a different kind of reliability problem. I engineered a security gateway
+            that blocks unauthorized tool access and detects hidden malicious instructions for AI agents, and an
+            agent that queries a live data catalog before generating code so it never hallucinates a column name.
+            I like problems where the interface has to stay usable, the computation has to be correct, and the
+            system has to earn trust from people doing difficult work.
+          </p>
+        </div>
+        <div class="focus-grid reveal-group">
+          <article class="reveal-item" style="--i: 0">
+            <div class="focus-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 12h4l2-7 4 14 2-7h4l2 3h4" />
+              </svg>
+            </div>
+            <div>
+              <h3>Scientific Computing</h3>
+              <p>Python pipelines for XFEL detector data, microjet imaging, and calibration workflows.</p>
+            </div>
           </article>
-          <article>
-            <h3>Visualization Interfaces</h3>
-            <p>Qt tools for detector views, interactive annotations, and research-facing data inspection.</p>
+          <article class="reveal-item" style="--i: 1">
+            <div class="focus-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3>AI &amp; Security Systems</h3>
+              <p>A security gateway for AI agents and a metadata-aware code generation agent built on MCP.</p>
+            </div>
           </article>
-          <article>
-            <h3>Product Engineering</h3>
-            <p>React and FastAPI systems that make technical information searchable and usable.</p>
+          <article class="reveal-item" style="--i: 2">
+            <div class="focus-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 6 4 10l5 4" />
+                <path d="M15 6l5 4-5 4" />
+                <path d="M13 4l-2 16" />
+              </svg>
+            </div>
+            <div>
+              <h3>Full-Stack Engineering</h3>
+              <p>React/TypeScript front ends and FastAPI/Python services shipped end to end.</p>
+            </div>
           </article>
         </div>
       </section>
