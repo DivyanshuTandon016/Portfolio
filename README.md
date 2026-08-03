@@ -6,14 +6,14 @@ Live site: [https://dtandon.com/](https://dtandon.com/)
 
 ## Overview
 
-This is a static portfolio website for internships, research roles, professional networking, and public viewing. Dark theme built around ASU's brand colors (maroon `#8C1D40`, gold `#FFC627`). Sections: hero, About, Projects, Experience, Education, Writings (publication + posters), Gallery, Technical Stack, and Contact.
+This is a static portfolio website for internships, research roles, professional networking, and public viewing. The responsive dark interface uses ASU's maroon and gold, with the original `assets/profile.png` featured in the hero. Sections: hero, Projects, About, Experience, Education, Writings, Gallery, Technical Stack, and Contact.
 
 ## Project Structure
 
 - `index.html` - page content, SEO metadata, contact links, and portfolio sections
 - `styles.css` - dark ASU-themed design system: layout, cards, animations, responsive breakpoints
-- `script.js` - mobile nav, active-section highlighting, scroll-reveal, stat count-up, portrait tilt
-- `assets/` - resume PDF and portfolio images (lab photos are pre-rotated/compressed for web)
+- `script.js` - accessible mobile navigation, active-section highlighting, scroll reveal, and footer year
+- `assets/` - the original profile portrait, resume PDF, research posters, and lab photography
 - `CNAME` - custom domain configuration for `dtandon.com`
 
 ## Notes on the JS-dependent animations

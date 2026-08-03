@@ -2,61 +2,62 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
 const header = document.querySelector("[data-header]");
 const navLinks = [...document.querySelectorAll(".site-nav a")];
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ---------- mobile nav ---------- */
+function setMenu(open) {
+  nav?.classList.toggle("is-open", open);
+  navToggle?.setAttribute("aria-expanded", String(open));
+  navToggle?.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+}
 
 navToggle?.addEventListener("click", () => {
-  const isOpen = nav?.classList.toggle("is-open");
-  navToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+  setMenu(!nav?.classList.contains("is-open"));
 });
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    nav?.classList.remove("is-open");
-    navToggle?.setAttribute("aria-expanded", "false");
-  });
+navLinks.forEach((link) => link.addEventListener("click", () => setMenu(false)));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setMenu(false);
 });
 
-/* ---------- active section highlight ---------- */
+document.addEventListener("click", (event) => {
+  if (!nav?.classList.contains("is-open")) return;
+  if (!nav.contains(event.target) && !navToggle?.contains(event.target)) setMenu(false);
+});
 
-const sections = navLinks
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 960) setMenu(false);
+});
+
+const observedSections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.find((entry) => entry.isIntersecting);
+      if (!visible) return;
       navLinks.forEach((link) => {
-        link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+        link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.target.id}`);
       });
-    });
-  },
-  {
-    rootMargin: "-35% 0px -55% 0px",
-    threshold: 0.01,
-  }
-);
-
-sections.forEach((section) => sectionObserver.observe(section));
-
-/* ---------- header shadow on scroll ---------- */
-
-window.addEventListener("scroll", () => {
-  header?.classList.toggle("has-shadow", window.scrollY > 8);
-});
-
-/* ---------- scroll-reveal ---------- */
-
-const revealTargets = [...document.querySelectorAll(".reveal, .reveal-group")];
-
-function revealAll() {
-  revealTargets.forEach((el) => el.classList.add("is-visible"));
+    },
+    { rootMargin: "-30% 0px -62% 0px", threshold: 0 }
+  );
+  observedSections.forEach((section) => sectionObserver.observe(section));
 }
 
-if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-  // No animation support (or the user asked for none): show everything now.
+function updateHeader() {
+  header?.classList.toggle("has-shadow", window.scrollY > 8);
+}
+
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
+
+const revealTargets = [...document.querySelectorAll(".reveal, .reveal-group")];
+const revealAll = () => revealTargets.forEach((element) => element.classList.add("is-visible"));
+
+if (reducedMotion || !("IntersectionObserver" in window)) {
   revealAll();
 } else {
   const revealObserver = new IntersectionObserver(
@@ -67,78 +68,11 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0, rootMargin: "0px 0px -6% 0px" }
+    { rootMargin: "0px 0px -7% 0px", threshold: 0.02 }
   );
-
-  revealTargets.forEach((el) => revealObserver.observe(el));
-
-  // Safety net: if anything is still hidden a couple seconds in (e.g. a
-  // fast scroll the observer never caught up with), reveal it rather
-  // than leave it permanently invisible.
-  window.setTimeout(revealAll, 2000);
+  revealTargets.forEach((element) => revealObserver.observe(element));
+  window.setTimeout(revealAll, 1800);
 }
 
-/* ---------- stat count-up ---------- */
-/* Only stats explicitly opted in via [data-countup] animate - a year
-   like "2027" or the "∞" symbol shouldn't visibly count up from 0. */
-
-const statEls = [...document.querySelectorAll(".stat-num[data-countup]")];
-
-function animateCount(el) {
-  const raw = el.textContent.trim();
-  const match = raw.match(/^(\d+)(\+?)$/);
-  if (!match) return;
-
-  const target = Number(match[1]);
-  const suffix = match[2];
-  const duration = 900;
-  const start = performance.now();
-
-  function tick(now) {
-    const progress = Math.min(1, (now - start) / duration);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(target * eased) + suffix;
-    if (progress < 1) requestAnimationFrame(tick);
-  }
-
-  requestAnimationFrame(tick);
-}
-
-if (statEls.length && !prefersReducedMotion) {
-  const statObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        animateCount(entry.target);
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.6 }
-  );
-
-  statEls.forEach((el) => statObserver.observe(el));
-}
-
-/* ---------- subtle portrait tilt ---------- */
-
-const portraitFrame = document.querySelector(".portrait-frame");
-
-if (portraitFrame && !prefersReducedMotion && matchMedia("(hover: hover)").matches) {
-  const maxTilt = 5;
-
-  portraitFrame.addEventListener("mousemove", (event) => {
-    const rect = portraitFrame.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    portraitFrame.style.transform = `rotateX(${(-y * maxTilt).toFixed(2)}deg) rotateY(${(x * maxTilt).toFixed(2)}deg)`;
-  });
-
-  portraitFrame.addEventListener("mouseleave", () => {
-    portraitFrame.style.transform = "";
-  });
-}
-
-/* ---------- footer year ---------- */
-
-const yearEl = document.querySelector("[data-year]");
-if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+const year = document.querySelector("[data-year]");
+if (year) year.textContent = String(new Date().getFullYear());
