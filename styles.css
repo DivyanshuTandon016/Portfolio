@@ -11,7 +11,8 @@
   --maroon: #8c1d40;
   --maroon-bright: #c4335e;
   --gold: #ffc627;
-  --gold-soft: #ffdb7a;
+  --gold-soft: #e9c98a;
+  --accent: #bfa06a;
   --radius: 16px;
   --radius-sm: 10px;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
@@ -184,7 +185,7 @@ main,
   align-items: center;
   gap: 8px;
   margin-bottom: 14px;
-  color: var(--gold);
+  color: var(--accent);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -195,7 +196,7 @@ main,
   width: 22px;
   height: 2px;
   border-radius: 2px;
-  background: var(--gold);
+  background: var(--accent);
   content: "";
 }
 
@@ -515,7 +516,7 @@ main,
 
 .what-i-do h4 {
   margin-bottom: 10px;
-  color: var(--gold);
+  color: var(--accent);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -545,7 +546,7 @@ main,
   height: 5px;
   margin-top: 6px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--accent);
   content: "";
 }
 
@@ -600,7 +601,7 @@ main,
 
 .stat-num {
   margin-bottom: 6px;
-  color: var(--gold);
+  color: var(--gold-soft);
   font-family: "Sora", sans-serif;
   font-size: 1.7rem;
   font-weight: 800;
@@ -699,8 +700,8 @@ main,
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: linear-gradient(160deg, rgba(140, 29, 64, 0.35), rgba(255, 198, 39, 0.12));
-  color: var(--gold);
+  background: linear-gradient(160deg, rgba(140, 29, 64, 0.32), rgba(255, 198, 39, 0.08));
+  color: var(--accent);
 }
 
 .focus-icon svg {
@@ -768,10 +769,11 @@ main,
 .project-tag {
   display: inline-flex;
   align-items: center;
+  border: 1px solid var(--line);
   border-radius: 999px;
   padding: 4px 12px;
-  background: rgba(140, 29, 64, 0.28);
-  color: var(--gold-soft);
+  background: var(--bg-elevated);
+  color: var(--accent);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -798,7 +800,7 @@ main,
 }
 
 .project-card ul li::marker {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .project-links {
@@ -812,13 +814,13 @@ main,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--gold-soft);
+  color: var(--accent);
   font-size: 0.9rem;
   font-weight: 700;
 }
 
 .project-links a:hover {
-  color: var(--gold);
+  color: var(--gold-soft);
 }
 
 /* ---------- experience timeline ---------- */
@@ -836,7 +838,7 @@ main,
 }
 
 .timeline-when {
-  color: var(--gold-soft);
+  color: var(--accent);
   font-size: 0.86rem;
   font-weight: 700;
 }
@@ -868,7 +870,7 @@ main,
 }
 
 .timeline ul li::marker {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 /* ---------- education ---------- */
@@ -886,7 +888,7 @@ main,
 }
 
 .edu-school {
-  color: var(--gold-soft);
+  color: var(--accent);
   font-size: 0.92rem;
   font-weight: 700;
 }
@@ -903,7 +905,7 @@ main,
   align-items: center;
   gap: 8px;
   margin-top: 16px;
-  color: var(--gold);
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -947,7 +949,7 @@ main,
 
 .pub-meta {
   margin-bottom: 12px;
-  color: var(--gold);
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -991,7 +993,7 @@ main,
   width: 18px;
   height: 18px;
   margin-top: 2px;
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .poster-stack {
@@ -1087,7 +1089,7 @@ main,
 }
 
 .skill-groups h3 {
-  color: var(--gold-soft);
+  color: var(--accent);
   font-size: 0.98rem;
 }
 
