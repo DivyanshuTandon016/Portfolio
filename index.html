@@ -169,7 +169,7 @@
       <section class="stat-bar section-pad reveal" aria-label="Career highlights">
         <div class="stat-grid">
           <div>
-            <div class="stat-num" data-countup>4+</div>
+            <div class="stat-num" data-countup>8+</div>
             <div class="stat-label">Projects Shipped</div>
             <div class="stat-sub">Research tools to production-ready apps</div>
           </div>
@@ -219,7 +219,9 @@
             hair, is stable enough to survive an X-ray beam. I do. As an undergraduate researcher with CXFEL and
             ASU Biodesign, and a summer researcher at SLAC's LCLS beamline, I build Python tools with NumPy, h5py,
             and PyQt/PySide that help researchers inspect detector data, process high-speed imagery, and quantify
-            microjet behavior: velocity, diameter, breakup, and stability.
+            microjet behavior: velocity, diameter, breakup, and stability. I've also written the GPIO relay and
+            serial-stage control tooling our lab uses to drive sample-positioning hardware from a low-cost
+            single-board computer.
           </p>
           <p>
             Outside the lab, I build for a different kind of reliability problem. I engineered a security gateway
@@ -229,42 +231,21 @@
             system has to earn trust from people doing difficult work.
           </p>
         </div>
-        <div class="focus-grid reveal-group">
+        <div class="focus-row reveal-group">
           <article class="reveal-item" style="--i: 0">
-            <div class="focus-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M2 12h4l2-7 4 14 2-7h4l2 3h4" />
-              </svg>
-            </div>
-            <div>
-              <h3>Scientific Computing</h3>
-              <p>Python pipelines for XFEL detector data, microjet imaging, and calibration workflows.</p>
-            </div>
+            <span class="focus-index">01</span>
+            <h3>Scientific Computing</h3>
+            <p>Python pipelines for XFEL detector data, microjet imaging, and calibration workflows.</p>
           </article>
           <article class="reveal-item" style="--i: 1">
-            <div class="focus-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" />
-                <path d="M9 12l2 2 4-4" />
-              </svg>
-            </div>
-            <div>
-              <h3>AI &amp; Security Systems</h3>
-              <p>A security gateway for AI agents and a metadata-aware code generation agent built on MCP.</p>
-            </div>
+            <span class="focus-index">02</span>
+            <h3>AI &amp; Security Systems</h3>
+            <p>A security gateway for AI agents and a metadata-aware code generation agent built on MCP.</p>
           </article>
           <article class="reveal-item" style="--i: 2">
-            <div class="focus-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M9 6 4 10l5 4" />
-                <path d="M15 6l5 4-5 4" />
-                <path d="M13 4l-2 16" />
-              </svg>
-            </div>
-            <div>
-              <h3>Full-Stack Engineering</h3>
-              <p>React/TypeScript front ends and FastAPI/Python services shipped end to end.</p>
-            </div>
+            <span class="focus-index">03</span>
+            <h3>Full-Stack Engineering</h3>
+            <p>React/TypeScript front ends and FastAPI/Python services shipped end to end.</p>
           </article>
         </div>
       </section>
@@ -273,7 +254,7 @@
         <div class="section-heading center reveal">
           <p class="eyebrow">Selected Work</p>
           <h2>Projects</h2>
-          <p>A mix of research software, security tooling, and full-stack apps, all built end to end.</p>
+          <p>Research software, security tooling, hardware control, and full-stack apps, all built end to end.</p>
         </div>
         <div class="project-grid reveal-group">
           <article class="project-card reveal-item" style="--i: 0">
@@ -361,6 +342,83 @@
               <a href="https://github.com/divtandon/ReddWall" target="_blank" rel="noreferrer">View on GitHub &rarr;</a>
             </div>
           </article>
+
+          <article class="project-card reveal-item" style="--i: 4">
+            <div class="project-topline">
+              <span class="project-tag">Hardware</span>
+              <span class="project-date">CXFEL Lab Tooling</span>
+            </div>
+            <h3>OrangePi Instrument Control Tools</h3>
+            <p>
+              Python tooling that turns a low-cost OrangePi Zero 2 into a remote controller for lab hardware used
+              in XFEL sample-delivery experiments.
+            </p>
+            <ul>
+              <li>Built a PyQt GUI that connects over SSH to control an 8-channel relay board, giving the CXFEL team remote control over lab LEDs and laser diode modules.</li>
+              <li>Documented the relay wiring (COM to supply +, NO to LED/laser anode) so teammates could wire new hardware safely without guesswork.</li>
+              <li>Set up serial control of a Thorlabs Elliptec rotation stage, mapping motor positions to sample slots for automated positioning during experiments.</li>
+            </ul>
+          </article>
+
+          <article class="project-card reveal-item" style="--i: 5">
+            <div class="project-topline">
+              <span class="project-tag">Full Stack</span>
+              <span class="project-date">May 2026 &ndash; June 2026</span>
+            </div>
+            <h3>GradePilot: GPA Forecasting Tool</h3>
+            <p>
+              A React/TypeScript web app that forecasts GPA by combining completed course history with
+              what-if scenarios for the current semester, entirely client-side.
+            </p>
+            <ul>
+              <li>PDF transcript upload (via PDF.js) auto-populates completed course history, no login or database required.</li>
+              <li>Dashboard shows completed, projected, and cumulative GPA alongside semester-grouped trend summaries.</li>
+              <li>Customizable grade-scale editor; all processing happens locally in the browser for privacy.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/divtandon/GradePilot" target="_blank" rel="noreferrer">View on GitHub &rarr;</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal-item" style="--i: 6">
+            <div class="project-topline">
+              <span class="project-tag">Full Stack</span>
+              <span class="project-date">May 2026</span>
+            </div>
+            <h3>CareerNest: Job Application Tracker</h3>
+            <p>
+              A Chrome extension paired with a React dashboard that automatically detects submitted job
+              applications and logs them, no manual data entry required.
+            </p>
+            <ul>
+              <li>Detects submission-confirmation pages and saves structured job data without reading passwords or cookies.</li>
+              <li>Works fully free on extension storage alone, or with an optional FastAPI/SQLite backend for a REST API and stats.</li>
+              <li>Three deployment modes: free (GitHub Pages + extension), local dev, and GitHub Actions CI/CD.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/divtandon/CareerNest" target="_blank" rel="noreferrer">View on GitHub &rarr;</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal-item" style="--i: 7">
+            <div class="project-topline">
+              <span class="project-tag">Full Stack</span>
+              <span class="project-date">Jan 2025 &ndash; May 2025</span>
+            </div>
+            <h3>Q&amp;A Platform</h3>
+            <p>
+              A multi-role Q&amp;A system in Java with CRUD operations and input validation built around a
+              finite state machine.
+            </p>
+            <ul>
+              <li>Role-based access for Admin, Staff, and Student users, each with its own workflow.</li>
+              <li>Reviewer approval workflow and trust-based review filtering, plus private messaging between users.</li>
+              <li>UML-driven design with JUnit-tested core logic.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/divtandon/qa-platform-java" target="_blank" rel="noreferrer">View on GitHub &rarr;</a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -437,17 +495,22 @@
             <p class="coursework-label">Relevant Coursework</p>
             <div class="coursework-grid">
               <span>Data Structures &amp; Algorithms</span>
+              <span>Object-Oriented Programming</span>
               <span>Operating Systems</span>
               <span>Database Management</span>
+              <span>Software Engineering</span>
               <span>Software QA &amp; Testing</span>
               <span>Theory of Computer Science</span>
               <span>Principles of Programming Languages</span>
+              <span>Logic in Computer Science</span>
               <span>Information Assurance</span>
               <span>Computer Organization &amp; Assembly</span>
               <span>Digital Design Fundamentals</span>
               <span>Discrete Math Structures</span>
               <span>Intro to Artificial Intelligence</span>
               <span>Applied Linear Algebra</span>
+              <span>Data Wrangling with SQL</span>
+              <span>Data Analysis with Python</span>
             </div>
           </div>
         </div>

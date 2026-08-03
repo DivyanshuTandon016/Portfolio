@@ -669,11 +669,8 @@ html.js .reveal-group:not(.is-visible) .reveal-item {
 
 /* ---------- about ---------- */
 
-.about {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: 56px;
-  align-items: start;
+.about-copy {
+  max-width: 860px;
 }
 
 .about-copy p {
@@ -687,40 +684,44 @@ html.js .reveal-group:not(.is-visible) .reveal-item {
   margin-bottom: 0;
 }
 
-.focus-grid {
+.focus-row {
   display: grid;
-  gap: 16px;
-}
-
-.focus-grid article {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.focus-icon {
-  display: grid;
-  flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
-  place-items: center;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 48px;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  background: linear-gradient(160deg, rgba(140, 29, 64, 0.32), rgba(255, 198, 39, 0.08));
-  color: var(--accent);
+  border-radius: var(--radius);
+  background: var(--line-soft);
 }
 
-.focus-icon svg {
-  width: 20px;
-  height: 20px;
+.focus-row article {
+  padding: 28px 26px;
+  background: var(--bg-soft);
+  transition: background 0.2s;
 }
 
-.focus-grid h3 {
-  margin-bottom: 6px;
+.focus-row article:hover {
+  background: var(--bg-elevated);
+}
+
+.focus-index {
+  display: block;
+  margin-bottom: 14px;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+  font-family: "Sora", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  opacity: 0.85;
+}
+
+.focus-row h3 {
+  margin-bottom: 8px;
   font-size: 1.02rem;
 }
 
-.focus-grid p {
+.focus-row p {
   margin: 0;
   color: var(--muted);
   font-size: 0.93rem;
@@ -1214,7 +1215,6 @@ html.js .reveal-group:not(.is-visible) .reveal-item {
   }
 
   .hero,
-  .about,
   .publication,
   .edu-card,
   .section-heading {
@@ -1237,8 +1237,8 @@ html.js .reveal-group:not(.is-visible) .reveal-item {
     width: 220px;
   }
 
-  .about {
-    gap: 34px;
+  .focus-row {
+    grid-template-columns: 1fr;
   }
 
   .stat-grid {
@@ -1409,7 +1409,7 @@ html.js .reveal-group:not(.is-visible) .reveal-item {
   .project-grid,
   .skill-groups,
   .gallery-grid,
-  .about,
+  .focus-row,
   .publication,
   .edu-card,
   .section-heading {
@@ -1423,6 +1423,7 @@ html.js .reveal-group:not(.is-visible) .reveal-item {
   .skill-groups article,
   .timeline article,
   .stat-grid div,
+  .focus-row article,
   .edu-card,
   .pub-card {
     color: #111827;
