@@ -6,15 +6,22 @@ Live site: [https://dtandon.com/](https://dtandon.com/)
 
 ## Overview
 
-This is a static portfolio website for internships, research roles, professional networking, and public viewing. It highlights research work, software projects, publications, skills, contact links, and a downloadable resume.
+This is a static portfolio website for internships, research roles, professional networking, and public viewing. Dark theme built around ASU's brand colors (maroon `#8C1D40`, gold `#FFC627`). Sections: hero, About, Projects, Experience, Education, Writings (publication + posters), Gallery, Technical Stack, and Contact.
 
 ## Project Structure
 
 - `index.html` - page content, SEO metadata, contact links, and portfolio sections
-- `styles.css` - responsive visual design, layout, and component styling
-- `script.js` - mobile navigation and active section highlighting
-- `assets/` - resume PDF and portfolio images
+- `styles.css` - dark ASU-themed design system: layout, cards, animations, responsive breakpoints
+- `script.js` - mobile nav, active-section highlighting, scroll-reveal, stat count-up, portrait tilt
+- `assets/` - resume PDF and portfolio images (lab photos are pre-rotated/compressed for web)
 - `CNAME` - custom domain configuration for `dtandon.com`
+
+## Notes on the JS-dependent animations
+
+Scroll-reveal only hides content once an inline script in `<head>` confirms JS is
+running (adds a `js` class to `<html>`). If JS fails to load for any reason, all
+content stays fully visible by default - the animations are a progressive
+enhancement, not a requirement for the page to work.
 
 ## Local Preview
 
@@ -24,7 +31,7 @@ Open `index.html` in a browser. No build step or package install is required.
 
 The site is published with GitHub Pages from this repository:
 
-[https://github.com/DivyanshuTandon016/Portfolio](https://github.com/DivyanshuTandon016/Portfolio)
+[https://github.com/divtandon/Portfolio](https://github.com/divtandon/Portfolio)
 
 The custom domain is configured through `CNAME`:
 
