@@ -267,88 +267,96 @@
       </section>
 
       <section class="section-pad projects" id="projects">
-        <div class="section-heading">
-          <h2>Selected Projects</h2>
+        <div class="section-heading center reveal">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Projects</h2>
+          <p>A mix of research software, security tooling, and full-stack apps &mdash; all built end to end.</p>
         </div>
-        <div class="project-grid">
-          <article class="project-card">
+        <div class="project-grid reveal-group">
+          <article class="project-card reveal-item" style="--i: 0">
             <div class="project-topline">
-              <span>Scientific Software</span>
-              <span>June 2025 - Present</span>
+              <span class="project-tag">Scientific Software</span>
+              <span class="project-date">July 2024 &ndash; Present</span>
             </div>
-            <h3>Reborn Visualization Framework</h3>
+            <h3>Reborn &mdash; Scientific Visualization Framework</h3>
             <p>
-              Contributed to an open-source Python framework used for processing, visualizing, and analyzing
-              X-ray diffraction detector data from XFEL experiments.
+              Open-source Python framework for processing, visualizing, and analyzing X-ray diffraction detector
+              data from XFEL experiments.
             </p>
             <ul>
-              <li>Improved Qt PADView detector ring annotation and interactive labels.</li>
-              <li>Resolved PyQt/PySide rendering and dependency issues across Linux environments.</li>
+              <li>
+                Redesigned the detector Geometry Editor around a delegate/strategy pattern (abstract base class,
+                concrete PyQt implementation) to decouple rotation/translation math from the UI.
+              </li>
+              <li>Fixed a GitLab-tracked crash from zero/negative detector distances with input validation across both code paths.</li>
+              <li>
+                Built a custom validated spin-box widget, resolution/q-value ring labeling, an undo/redo history
+                stack, and threshold-based masking for the pixel-mask editor.
+              </li>
             </ul>
-            <a href="https://gitlab.com/kirianlab/reborn" target="_blank" rel="noreferrer">View Reborn</a>
+            <div class="project-links">
+              <a href="https://gitlab.com/kirianlab/reborn" target="_blank" rel="noreferrer">View Repository &rarr;</a>
+            </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card reveal-item" style="--i: 1">
             <div class="project-topline">
-              <span>Full Stack</span>
-              <span>May 2026 - June 2026</span>
+              <span class="project-tag">Security</span>
+              <span class="project-date">Summer 2026</span>
             </div>
-            <h3>ReddWall — Reddit Moderation Tool</h3>
+            <h3>The Guardian &mdash; MCP Security Gateway</h3>
             <p>
-              Built a Reddit app to help moderators instantly lock and remove comment threads during raids,
-              brigading, and spam bursts, with bulk moderation across entire comment trees.
+              A security gateway for AI agents that automatically blocks unauthorized tool access and detects
+              hidden malicious instructions in real time.
             </p>
             <ul>
-              <li>Keyword filtering to target only harmful or off-topic content across thread trees.</li>
-              <li>Added preview mode and audit log so moderators can review impact before acting.</li>
+              <li>Detection rules based on well-known AI security risk categories, evaluated in real time.</li>
+              <li>Deployed as two independent Docker containers with a live dashboard for monitoring activity.</li>
+              <li>Backed by a GitHub Actions pipeline that runs 72 tests before every deployment.</li>
             </ul>
+            <div class="project-links">
+              <a href="https://github.com/divtandon" target="_blank" rel="noreferrer">View on GitHub &rarr;</a>
+            </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card reveal-item" style="--i: 2">
             <div class="project-topline">
-              <span>Research Computing</span>
-              <span>Feb 2026 - Apr 2026</span>
+              <span class="project-tag">AI Agents</span>
+              <span class="project-date">Summer 2026</span>
             </div>
-            <h3>Microjet Image Analysis</h3>
+            <h3>DataDoc &mdash; Metadata-Aware Code Generation Agent</h3>
             <p>
-              Developed Python tools for liquid microjet characterization in XFEL sample-delivery experiments.
+              An agent on Anthropic's Claude Agent SDK that queries a live DataHub catalog over MCP for real
+              schema and lineage before generating dbt models, Airflow DAGs, and SQL migrations.
             </p>
             <ul>
-              <li>Computed jet velocity, diameter, breakup behavior, and angle.</li>
-              <li>Automated preprocessing, metadata extraction, and visualization workflows.</li>
+              <li>Eliminates hallucinated column names by grounding generation in the live catalog.</li>
+              <li>Closed-loop metadata write-back: the agent tags undocumented/PII columns back to DataHub mid-generation.</li>
+              <li>Validated end to end against a self-hosted, Dockerized DataHub instance via the catalog's GraphQL API.</li>
             </ul>
+            <div class="project-links">
+              <a href="https://github.com/divtandon" target="_blank" rel="noreferrer">View on GitHub &rarr;</a>
+            </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card reveal-item" style="--i: 3">
             <div class="project-topline">
-              <span>Algorithms</span>
-              <span>May 2025 - June 2025</span>
+              <span class="project-tag">Full Stack</span>
+              <span class="project-date">Summer 2026</span>
             </div>
-            <h3>Graph Pathfinding Engine</h3>
+            <h3>ReddWall &mdash; Reddit Moderation App</h3>
             <p>
-              Built a graph-based routing engine for shortest-path computation using Dijkstra's algorithm,
-              adjacency lists, and min-heap optimization.
+              A published Devvit app giving moderators native tools to preview, lock, and remove risky comment
+              threads during raids, brigading, and spam bursts.
             </p>
             <ul>
-              <li>Built CLI workflows for loading graph data and reconstructing traversals.</li>
-              <li>Focused on scalable path computation and clear algorithmic design.</li>
+              <li>Phrase-based targeting with protected-comment safeguards to avoid over-moderation.</li>
+              <li>Redis-backed moderation history so actions are auditable after the fact.</li>
+              <li>Full lint, type-check, test, and build pipeline before every release.</li>
             </ul>
-          </article>
-
-          <article class="project-card">
-            <div class="project-topline">
-              <span>Full Stack</span>
-              <span>Jan 2025 - May 2025</span>
+            <div class="project-links">
+              <a href="https://github.com/divtandon" target="_blank" rel="noreferrer">View on GitHub &rarr;</a>
             </div>
-            <h3>Web-Based Q&amp;A Platform</h3>
-            <p>
-              Designed and implemented a multi-role Q&amp;A system with CRUD operations and input validation
-              using a Finite State Machine.
-            </p>
-            <ul>
-              <li>Built private messaging, reviewer approval, and trust-based review filtering.</li>
-              <li>Applied UML design, Javadoc documentation, and JUnit testing for system reliability.</li>
-            </ul>
           </article>
         </div>
       </section>
