@@ -79,13 +79,15 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
 }
 
 /* ---------- stat count-up ---------- */
+/* Only stats explicitly opted in via [data-countup] animate - a year
+   like "2027" or the "∞" symbol shouldn't visibly count up from 0. */
 
-const statEls = [...document.querySelectorAll(".stat-num")];
+const statEls = [...document.querySelectorAll(".stat-num[data-countup]")];
 
 function animateCount(el) {
   const raw = el.textContent.trim();
   const match = raw.match(/^(\d+)(\+?)$/);
-  if (!match) return; // leave non-numeric values (e.g. "∞") untouched
+  if (!match) return;
 
   const target = Number(match[1]);
   const suffix = match[2];

@@ -165,6 +165,7 @@ main,
   width: var(--content);
   margin: 0 auto;
   padding: 84px 0;
+  scroll-margin-top: 96px;
 }
 
 .section-heading {
