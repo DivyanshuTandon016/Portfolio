@@ -49,8 +49,15 @@ window.addEventListener("scroll", () => {
 
 /* ---------- scroll-reveal ---------- */
 
-if (prefersReducedMotion) {
-  document.querySelectorAll(".reveal, .reveal-group").forEach((el) => el.classList.add("is-visible"));
+const revealTargets = [...document.querySelectorAll(".reveal, .reveal-group")];
+
+function revealAll() {
+  revealTargets.forEach((el) => el.classList.add("is-visible"));
+}
+
+if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  // No animation support (or the user asked for none): show everything now.
+  revealAll();
 } else {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -60,10 +67,15 @@ if (prefersReducedMotion) {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0, rootMargin: "0px 0px -6% 0px" }
   );
 
-  document.querySelectorAll(".reveal, .reveal-group").forEach((el) => revealObserver.observe(el));
+  revealTargets.forEach((el) => revealObserver.observe(el));
+
+  // Safety net: if anything is still hidden a couple seconds in (e.g. a
+  // fast scroll the observer never caught up with), reveal it rather
+  // than leave it permanently invisible.
+  window.setTimeout(revealAll, 2000);
 }
 
 /* ---------- stat count-up ---------- */
