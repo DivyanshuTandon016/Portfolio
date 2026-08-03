@@ -362,48 +362,97 @@
       </section>
 
       <section class="section-pad experience" id="experience">
-        <div class="section-heading">
+        <div class="section-heading center reveal">
+          <p class="eyebrow">Where I've Worked</p>
           <h2>Experience</h2>
         </div>
-        <div class="timeline">
-          <article>
-            <span>Sept 2025 - Present</span>
-            <h3>Research Assistant, ASU Biodesign</h3>
-            <p>
-              Process liquid microjet imaging datasets, support instrumentation setup and calibration, and help
-              coordinate data collection across active structural biology experiments.
-            </p>
+        <div class="timeline reveal-group">
+          <article class="reveal-item" style="--i: 0">
+            <span class="timeline-when">Sept 2025 &ndash; Present</span>
+            <div>
+              <h3 class="timeline-role">Research Assistant</h3>
+              <p class="timeline-org">BDI Biodesign &mdash; Center for Applied Structural Discovery, ASU</p>
+              <ul>
+                <li>Rebuilt a single-file Python script into an automated pipeline that processes entire folders of experiment data into Excel reports.</li>
+                <li>Added a validation step comparing two calculation methods against manual measurements to confirm accuracy.</li>
+              </ul>
+            </div>
           </article>
-          <article>
-            <span>May 2024 - Present</span>
-            <h3>Undergraduate Researcher, CXFEL</h3>
-            <p>
-              Build Python tools with NumPy and PyQt for biomolecular imaging, data analysis, automation, and
-              X-ray diffractive imaging workflows.
-            </p>
+          <article class="reveal-item" style="--i: 1">
+            <span class="timeline-when">May 2024 &ndash; Present</span>
+            <div>
+              <h3 class="timeline-role">Undergraduate Researcher</h3>
+              <p class="timeline-org">CXFEL &mdash; Compact X-ray Free Electron Laser, ASU</p>
+              <ul>
+                <li>Built Python tools (NumPy &amp; PyQt) to process and visualize X-ray image data for studying the structure of biological molecules.</li>
+                <li>Wrote image-processing algorithms and automated pipelines that sped up analysis and calibrated imaging data.</li>
+              </ul>
+            </div>
           </article>
-          <article>
-            <span>July 2025</span>
-            <h3>Summer Researcher, SLAC LCLS</h3>
-            <p>
-              Operated and optimized ultra-thin sheet-jet injectors for in-solution single-particle imaging and
-              assisted with detector configuration and data acquisition.
-            </p>
+          <article class="reveal-item" style="--i: 2">
+            <span class="timeline-when">July 2025</span>
+            <div>
+              <h3 class="timeline-role">Summer Researcher</h3>
+              <p class="timeline-org">SLAC National Accelerator Laboratory, Menlo Park, CA</p>
+              <ul>
+                <li>Operated and fine-tuned equipment that delivers liquid samples into an X-ray beam at LCLS, keeping delivery stable for high-concentration biological samples.</li>
+                <li>Worked with a team from multiple universities and labs to collect data in real time, measuring particles as small as 30 nanometers.</li>
+              </ul>
+            </div>
           </article>
-          <article>
-            <span>May 2024 - July 2024</span>
-            <h3>Data Analyst, MaRTy Fieldwork</h3>
-            <p>
-              Collected and validated MaRTy temperature data for shade analysis, transforming field data into insights
-              for sustainable urban heat resilience.
-            </p>
+          <article class="reveal-item" style="--i: 3">
+            <span class="timeline-when">May 2024 &ndash; July 2024</span>
+            <div>
+              <h3 class="timeline-role">Data Analyst</h3>
+              <p class="timeline-org">MaRTy Fieldwork and Urban Data Collection, ASU</p>
+              <ul>
+                <li>Led urban fieldwork data collection using mobile MaRTy sensor platforms for shade and heat-exposure analysis.</li>
+                <li>Applied statistical analysis to validate temperature data for ASU's Shade Lab urban heat planning.</li>
+              </ul>
+            </div>
           </article>
         </div>
       </section>
 
-      <section class="section-pad publication" id="publication">
-        <div class="publication-copy">
-          <h2>Publication</h2>
+      <section class="section-pad reveal">
+        <div class="edu-card">
+          <div>
+            <p class="eyebrow">Education</p>
+            <h3 class="edu-degree">B.S. Computer Science</h3>
+            <p class="edu-school">Arizona State University &mdash; Expected May 2027</p>
+            <p class="edu-meta">
+              Full-time computer science coursework alongside ongoing research at CXFEL and ASU Biodesign.
+            </p>
+            <span class="edu-honors">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2l2.9 6.26 6.9.6-5.2 4.6 1.6 6.74L12 16.9l-6.2 3.3 1.6-6.74-5.2-4.6 6.9-.6L12 2Z" />
+              </svg>
+              Dean's List
+            </span>
+          </div>
+          <div>
+            <p class="coursework-label">Relevant Coursework</p>
+            <div class="coursework-grid">
+              <span>Data Structures &amp; Algorithms</span>
+              <span>Operating Systems</span>
+              <span>Database Management</span>
+              <span>Software QA &amp; Testing</span>
+              <span>Theory of Computer Science</span>
+              <span>Principles of Programming Languages</span>
+              <span>Information Assurance</span>
+              <span>Computer Organization &amp; Assembly</span>
+              <span>Digital Design Fundamentals</span>
+              <span>Discrete Math Structures</span>
+              <span>Intro to Artificial Intelligence</span>
+              <span>Applied Linear Algebra</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad publication" id="writings">
+        <div class="pub-card reveal">
+          <p class="eyebrow">Writings</p>
           <p class="pub-meta">Lab on a Chip &middot; Royal Society of Chemistry &middot; 2025</p>
           <p class="pub-title">Synchronized droplet nozzle for in-vacuum X-ray scattering experiments</p>
           <p>
@@ -416,9 +465,17 @@
             Ansari, A. et al. (incl. Divyanshu Tandon). <em>Lab on a Chip</em>, Advance Article, 2025.
             DOI:&nbsp;10.1039/D5LC00063G
           </p>
-          <a class="button" href="https://doi.org/10.1039/D5LC00063G" target="_blank" rel="noreferrer">Read Paper</a>
+          <a class="button" href="https://doi.org/10.1039/D5LC00063G" target="_blank" rel="noreferrer">Read Paper &rarr;</a>
+          <p class="pub-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 3h8l4 4v14H8z" />
+              <path d="M16 3v5h5" />
+            </svg>
+            Also presented two first-author research posters on GDVN nozzle design and characterization for
+            XFEL sample delivery at the ASU Biodesign Institute.
+          </p>
         </div>
-        <div class="poster-stack">
+        <div class="poster-stack reveal">
           <a href="assets/poster-droplet-nozzle.jpg" target="_blank" rel="noreferrer" class="poster-link">
             <img src="assets/poster-droplet-nozzle.jpg" alt="Research poster: Synchronized droplet nozzle for in-vacuum X-ray scattering experiments" />
           </a>
